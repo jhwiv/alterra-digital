@@ -423,15 +423,26 @@ button { cursor: pointer; font-family: inherit; }
   transition: color 300ms var(--ease);
   white-space: nowrap;
 }
-.tab-btn:hover { color: var(--text-primary); }
-.tab-btn.active { color: var(--gold); }
-.tab-btn.active::after {
+.tab-btn::after {
   content: '';
   position: absolute;
   bottom: -1px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: var(--gold);
+  transition: left 300ms var(--ease), right 300ms var(--ease);
+}
+.tab-btn:hover { color: var(--text-primary); }
+.tab-btn:hover::after {
   left: 0;
   right: 0;
-  height: 2px;
+  background: rgba(200, 168, 75, 0.4);
+}
+.tab-btn.active { color: var(--gold); }
+.tab-btn.active::after {
+  left: 0;
+  right: 0;
   background: var(--gold);
 }
 
@@ -1287,13 +1298,13 @@ button { cursor: pointer; font-family: inherit; }
 /* -------------------------------------------- */
 /* CREAM SECTION — Process overrides             */
 /* -------------------------------------------- */
-.section--cream .process-number { color: var(--navy); opacity: 0.15; }
+.section--cream .process-number { color: var(--navy); opacity: 0.3; }
 .section--cream .process-title { color: var(--navy); }
-.section--cream .process-desc { color: rgba(13,25,41,0.7); }
+.section--cream .process-desc { color: rgba(13,25,41,0.8); }
 .section--cream .pull-quote p { color: var(--navy); }
-.section--cream .pull-quote { border-color: rgba(13,25,41,0.1); }
+.section--cream .pull-quote { border-color: rgba(13,25,41,0.15); }
 .section--cream .process-connector svg path,
-.section--cream .process-connector svg line { stroke: rgba(13, 25, 41, 0.25); opacity: 1; }
+.section--cream .process-connector svg line { stroke: rgba(13, 25, 41, 0.35); opacity: 1; }
 
 /* -------------------------------------------- */
 /* TESTIMONIALS                                  */
@@ -1322,7 +1333,7 @@ button { cursor: pointer; font-family: inherit; }
   margin-top: 16px;
 }
 .testimonial-card {
-  background: rgba(13,25,41,0.7);
+  background: rgba(13,25,41,0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-gold);
