@@ -428,10 +428,9 @@ button { cursor: pointer; font-family: inherit; }
 /* 2. PRODUCT TABS                               */
 /* -------------------------------------------- */
 .tab-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
   padding: 40px 0;
 }
 
@@ -470,13 +469,14 @@ button { cursor: pointer; font-family: inherit; }
 }
 .tab-visual img {
   border-radius: var(--radius-lg);
-  max-height: 360px;
+  max-height: 280px;
+  max-width: 100%;
   object-fit: cover;
 }
 
 .feature-illustration {
   width: 100%;
-  max-width: 280px;
+  max-width: 220px;
   aspect-ratio: 5/4;
   display: flex;
   align-items: center;
@@ -523,6 +523,7 @@ button { cursor: pointer; font-family: inherit; }
   transition: transform 400ms var(--ease), box-shadow 400ms var(--ease), border-color 400ms var(--ease);
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 .demo-card:hover {
   transform: translateY(-4px);
@@ -1137,6 +1138,68 @@ button { cursor: pointer; font-family: inherit; }
 .footer-attribution:hover { color: var(--text-muted); }
 
 /* -------------------------------------------- */
+/* DEMO MODAL                                    */
+/* -------------------------------------------- */
+.demo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--navy);
+  display: none;
+  flex-direction: column;
+}
+.demo-modal.open {
+  display: flex;
+}
+
+.demo-modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  min-height: 56px;
+  background: rgba(13, 25, 41, 0.98);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.demo-modal-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.demo-modal-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: color 300ms var(--ease), border-color 300ms var(--ease);
+}
+.demo-modal-close:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.demo-modal-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* -------------------------------------------- */
 /* MOBILE RESPONSIVE                             */
 /* -------------------------------------------- */
 @media (max-width: 900px) {
@@ -1188,10 +1251,7 @@ button { cursor: pointer; font-family: inherit; }
   }
   .phone-bezel:hover { transform: none; }
 
-  .tab-split {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+  /* tab-split already stacked via flexbox */
 
   .demos-grid { grid-template-columns: 1fr; }
 

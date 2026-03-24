@@ -302,4 +302,35 @@
   generateQRCode('qr-zurich', 'https://www.zurich-weekend.com');
   generateQRCode('qr-maritimes', 'https://www.maritimesgrandloop.com');
 
+  /* ------------------------------------------ */
+  /* Demo Modal (iframe in-page)                 */
+  /* ------------------------------------------ */
+  var demoModal = document.getElementById('demoModal');
+  var demoIframe = document.getElementById('demoIframe');
+  var demoTitle = document.getElementById('demoModalTitle');
+
+  window.openDemo = function(card) {
+    var url = card.getAttribute('data-demo-url');
+    var title = card.querySelector('.demo-title').textContent;
+    if (!url || !demoModal) return;
+    demoTitle.textContent = title;
+    demoIframe.src = url;
+    demoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeDemo = function() {
+    if (!demoModal) return;
+    demoModal.classList.remove('open');
+    demoIframe.src = '';
+    document.body.style.overflow = '';
+  };
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && demoModal.classList.contains('open')) {
+      window.closeDemo();
+    }
+  });
+
 })();
