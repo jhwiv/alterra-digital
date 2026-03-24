@@ -426,8 +426,7 @@
     container.innerHTML = svg;
   }
 
-  generateQRCode('qr-zurich', 'https://www.zurich-weekend.com');
-  generateQRCode('qr-maritimes', 'https://www.maritimesgrandloop.com');
+
 
   /* ------------------------------------------ */
   /* Demo Modal (iframe in-page)                 */
