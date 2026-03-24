@@ -61,6 +61,53 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* -------------------------------------------- */
+/* Page Loader                                   */
+/* -------------------------------------------- */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 600ms ease, visibility 600ms ease;
+}
+.page-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-logo {
+  width: 60px;
+  height: 42px;
+  animation: loaderPulse 1.2s ease-in-out infinite;
+}
+@keyframes loaderPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* -------------------------------------------- */
+/* Hero Entrance Animation                       */
+/* -------------------------------------------- */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+.hero-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Phone slides in from right */
+.hero-right.hero-animate {
+  transform: translateX(40px);
+}
+.hero-right.hero-animate.visible {
+  transform: translateX(0);
+}
+
+/* -------------------------------------------- */
 /* Scroll Reveal                                 */
 /* -------------------------------------------- */
 .reveal {
@@ -301,7 +348,8 @@ button { cursor: pointer; font-family: inherit; }
   font-family: var(--font-body);
   font-size: 19px;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: rgba(250, 246, 238, 0.85);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   margin-bottom: 32px;
   max-width: 480px;
 }
@@ -331,9 +379,8 @@ button { cursor: pointer; font-family: inherit; }
     inset 0 0 0 1px rgba(255,255,255,0.05);
   position: relative;
   transform: rotateY(-5deg) rotateX(2deg);
-  transition: transform 600ms var(--ease);
+  transition: none; /* JS handles this now */
 }
-.phone-bezel:hover { transform: rotateY(0deg) rotateX(0deg); }
 
 .phone-notch {
   width: 100px;
@@ -525,25 +572,76 @@ button { cursor: pointer; font-family: inherit; }
   height: auto;
 }
 
-/* Product Demo Video */
-.product-video-wrap {
-  margin-top: 64px;
+/* Product Showcase Slider */
+.product-showcase-wrap {
+  margin: 48px auto 0;
   text-align: center;
+  max-width: 500px;
 }
-.product-video-heading {
+.product-showcase-heading {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 24px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 32px;
 }
-.product-video {
-  border-radius: 16px;
-  max-width: 800px;
+.product-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.showcase-phone-bezel {
+  width: 220px;
+  height: 440px;
+  background: #1A1A2E;
+  border-radius: 32px;
+  padding: 10px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,168,75,0.15);
+}
+.showcase-phone-screen {
   width: 100%;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0 16px 60px rgba(0,0,0,0.4);
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+.showcase-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.showcase-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+.showcase-slide.active {
+  opacity: 1;
+}
+.showcase-labels {
+  display: flex;
+  gap: 24px;
+}
+.showcase-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 300ms ease, border-color 300ms ease;
+}
+.showcase-label:hover { color: var(--text-primary); }
+.showcase-label.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 
 .section-hero-image {
@@ -682,57 +780,54 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 /* -------------------------------------------- */
-/* 4. PROCESS                                    */
+/* 4. PROCESS — Card Layout                      */
 /* -------------------------------------------- */
-.process-steps {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
+.process-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   margin: 48px 0 56px;
 }
-
-.process-step {
-  flex: 1;
-  max-width: 300px;
-  text-align: center;
-  padding: 0 16px;
+.process-card {
+  position: relative;
+  background: rgba(13, 25, 41, 0.04);
+  border: 1px solid rgba(13, 25, 41, 0.08);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: left;
+  transition: transform 400ms ease, box-shadow 400ms ease;
 }
-
-.process-number {
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(13, 25, 41, 0.08);
+}
+.process-card-number {
   font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--gold);
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--navy);
+  opacity: 0.06;
+  position: absolute;
+  top: 16px;
+  right: 24px;
   line-height: 1;
-  margin-bottom: 16px;
-  opacity: 0.5;
 }
-
-.process-title {
+.process-card-icon {
+  margin-bottom: 20px;
+}
+.process-card-title {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--navy);
   margin-bottom: 12px;
+  font-weight: 500;
 }
-
-.process-desc {
-  font-size: 15px;
+.process-card-desc {
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--text-muted);
-}
-
-.process-connector {
-  display: flex;
-  align-items: center;
-  padding-top: 24px;
-  flex-shrink: 0;
-}
-.process-connector svg {
-  width: 48px;
-  height: 20px;
+  color: rgba(13, 25, 41, 0.75);
 }
 
 .pull-quote {
@@ -1298,13 +1393,8 @@ button { cursor: pointer; font-family: inherit; }
 /* -------------------------------------------- */
 /* CREAM SECTION — Process overrides             */
 /* -------------------------------------------- */
-.section--cream .process-number { color: var(--navy); opacity: 0.3; }
-.section--cream .process-title { color: var(--navy); }
-.section--cream .process-desc { color: rgba(13,25,41,0.8); }
 .section--cream .pull-quote p { color: var(--navy); }
 .section--cream .pull-quote { border-color: rgba(13,25,41,0.15); }
-.section--cream .process-connector svg path,
-.section--cream .process-connector svg line { stroke: rgba(13, 25, 41, 0.35); opacity: 1; }
 
 /* -------------------------------------------- */
 /* TESTIMONIALS                                  */
@@ -1512,23 +1602,12 @@ button { cursor: pointer; font-family: inherit; }
     height: 400px;
     transform: none;
   }
-  .phone-bezel:hover { transform: none; }
 
   /* tab-split already stacked via flexbox */
 
   .demos-grid { grid-template-columns: 1fr; }
 
-  .product-video { max-width: 100%; }
-
-  .process-steps {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .process-connector {
-    transform: rotate(90deg);
-    padding-top: 0;
-  }
+  .process-cards { grid-template-columns: 1fr; }
 
   .pricing-feature-list { grid-template-columns: 1fr; }
 

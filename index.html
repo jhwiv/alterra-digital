@@ -33,6 +33,14 @@
 </head>
 <body>
 
+<div class="page-loader" id="pageLoader">
+  <svg class="loader-logo" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2L6 24h6l4-8.5 4 8.5h6L20 2z" stroke="#C8A84B" stroke-width="1.5" fill="none"/>
+    <path d="M14 18l6-12.5L26 18" stroke="#C8A84B" stroke-width="0.75" fill="none" opacity="0.5"/>
+    <circle cx="20" cy="8" r="1.5" stroke="#C8A84B" stroke-width="0.75" fill="none"/>
+  </svg>
+</div>
+
 <!-- ============================================ -->
 <!-- NAVIGATION                                    -->
 <!-- ============================================ -->
@@ -68,15 +76,15 @@
     <img src="./assets/alterra-hero-v2.webp" alt="" loading="eager">
   </div>
   <div class="hero-inner">
-    <div class="hero-left reveal">
-      <h1 class="hero-title">Bespoke Digital<br>Travel Companions</h1>
-      <p class="hero-subtitle">Your clients deserve more than a PDF. We build living, phone-native travel companions that make every journey unforgettable.</p>
-      <div class="hero-ctas">
+    <div class="hero-left">
+      <h1 class="hero-title hero-animate" data-delay="200">Bespoke Digital<br>Travel Companions</h1>
+      <p class="hero-subtitle hero-animate" data-delay="400">Your clients deserve more than a PDF. We build living, phone-native travel companions that make every journey unforgettable.</p>
+      <div class="hero-ctas hero-animate" data-delay="600">
         <a href="#demos" class="btn btn-gold">See Live Demos</a>
         <a href="#contact" class="btn btn-outline">Request a Pilot</a>
       </div>
     </div>
-    <div class="hero-right reveal">
+    <div class="hero-right hero-animate" data-delay="300">
       <div class="phone-mockup">
         <div class="phone-bezel">
           <div class="phone-notch"></div>
@@ -87,7 +95,7 @@
       </div>
     </div>
   </div>
-  <div class="stat-bar reveal">
+  <div class="stat-bar hero-animate" data-delay="800">
     <div class="stat"><span class="stat-value">$35B</span><span class="stat-label">luxury travel market</span></div>
     <div class="stat-divider"></div>
     <div class="stat"><span class="stat-value">20,000+</span><span class="stat-label">Virtuoso advisors</span></div>
@@ -238,12 +246,25 @@
       </div>
     </div>
 
-    <!-- Product Demo Video -->
-    <div class="product-video-wrap reveal">
-      <h3 class="product-video-heading">See It In Action</h3>
-      <video class="product-video" autoplay muted loop playsinline>
-        <source src="./assets/alterra-product-demo.mp4" type="video/mp4">
-      </video>
+    <!-- Product Showcase Slider -->
+    <div class="product-showcase-wrap reveal">
+      <h3 class="product-showcase-heading">See It In Action</h3>
+      <div class="product-showcase">
+        <div class="showcase-phone-bezel">
+          <div class="showcase-phone-screen">
+            <div class="showcase-slides">
+              <img src="./assets/alterra-feature-streetview.webp" alt="360° Street Views" class="showcase-slide active">
+              <img src="./assets/alterra-feature-pronunciation.webp" alt="Pronunciation Engine" class="showcase-slide">
+              <img src="./assets/alterra-feature-weather.webp" alt="Live Weather" class="showcase-slide">
+            </div>
+          </div>
+        </div>
+        <div class="showcase-labels">
+          <span class="showcase-label active" data-slide="0">Street Views</span>
+          <span class="showcase-label" data-slide="1">Pronunciation</span>
+          <span class="showcase-label" data-slide="2">Weather</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -320,27 +341,30 @@
     <div class="section-label reveal">THE PROCESS</div>
     <h2 class="section-heading reveal">How It Works</h2>
 
-    <div class="process-steps reveal">
-      <div class="process-step">
-        <div class="process-number">01</div>
-        <h3 class="process-title">You Design the Trip</h3>
-        <p class="process-desc">You plan every detail — hotels, trains, restaurants, guides, timing — the way you always do.</p>
+    <div class="process-cards reveal">
+      <div class="process-card">
+        <div class="process-card-number">01</div>
+        <div class="process-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="process-card-title">You Design the Trip</h3>
+        <p class="process-card-desc">Hotels, trains, restaurants, guides, timing — you plan every detail the way you always do. Nothing changes about your craft.</p>
       </div>
-      <div class="process-connector">
-        <svg viewBox="0 0 60 20" fill="none"><path d="M0 10h50" stroke="var(--gold)" stroke-width="1" opacity="0.4"/><path d="M45 5l10 5-10 5" stroke="var(--gold)" stroke-width="1" fill="none" opacity="0.4"/></svg>
+      <div class="process-card">
+        <div class="process-card-number">02</div>
+        <div class="process-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <h3 class="process-card-title">You Send Us the Details</h3>
+        <p class="process-card-desc">Dates, reservations, client preferences. The same information you'd put in a PDF — we just do something extraordinary with it.</p>
       </div>
-      <div class="process-step">
-        <div class="process-number">02</div>
-        <h3 class="process-title">You Send Us the Details</h3>
-        <p class="process-desc">Dates, reservations, client preferences. The same information you'd put in a PDF.</p>
-      </div>
-      <div class="process-connector">
-        <svg viewBox="0 0 60 20" fill="none"><path d="M0 10h50" stroke="var(--gold)" stroke-width="1" opacity="0.4"/><path d="M45 5l10 5-10 5" stroke="var(--gold)" stroke-width="1" fill="none" opacity="0.4"/></svg>
-      </div>
-      <div class="process-step">
-        <div class="process-number">03</div>
-        <h3 class="process-title">We Deliver a Finished Companion</h3>
-        <p class="process-desc">Unique URL, your branding, your client's name. 3–5 business days. You review. We revise. Done.</p>
+      <div class="process-card">
+        <div class="process-card-number">03</div>
+        <div class="process-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="process-card-title">We Deliver a Finished Companion</h3>
+        <p class="process-card-desc">Unique URL, your branding, your client's name. 3–5 business days. You review. We revise. Done.</p>
       </div>
     </div>
 

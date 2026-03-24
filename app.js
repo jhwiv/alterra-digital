@@ -6,6 +6,89 @@
   'use strict';
 
   /* ------------------------------------------ */
+  /* Page Loader + Hero Entrance                  */
+  /* ------------------------------------------ */
+  var loader = document.getElementById('pageLoader');
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (loader) loader.classList.add('fade-out');
+      // Trigger hero entrance after loader
+      setTimeout(function() {
+        document.querySelectorAll('.hero-animate').forEach(function(el) {
+          var delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+          setTimeout(function() {
+            el.classList.add('visible');
+          }, delay);
+        });
+      }, 400);
+    }, 800);
+  });
+
+  /* ------------------------------------------ */
+  /* Scroll-Linked Phone Rotation                 */
+  /* ------------------------------------------ */
+  var phoneBezel = document.querySelector('.phone-bezel');
+  var hero = document.querySelector('.hero');
+  if (phoneBezel && hero) {
+    window.addEventListener('scroll', function() {
+      var scrolled = window.scrollY;
+      var heroHeight = hero.offsetHeight;
+      if (scrolled < heroHeight) {
+        var progress = scrolled / heroHeight;
+        var rotateY = -5 + (progress * 10);
+        var rotateX = 2 - (progress * 4);
+        var translateY = -(progress * 30);
+        phoneBezel.style.transform = 'rotateY(' + rotateY + 'deg) rotateX(' + rotateX + 'deg) translateY(' + translateY + 'px)';
+      }
+    }, { passive: true });
+  }
+
+  /* ------------------------------------------ */
+  /* Nav Opacity on Scroll                        */
+  /* ------------------------------------------ */
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(13, 25, 41, 0.98)';
+      } else {
+        nav.style.background = 'rgba(13, 25, 41, 0.92)';
+      }
+    }, { passive: true });
+  }
+
+  /* ------------------------------------------ */
+  /* Product Showcase Slider                      */
+  /* ------------------------------------------ */
+  var showcaseSlides = document.querySelectorAll('.showcase-slide');
+  var showcaseLabels = document.querySelectorAll('.showcase-label');
+  var currentSlide = 0;
+  var slideInterval;
+
+  function goToSlide(index) {
+    showcaseSlides.forEach(function(s) { s.classList.remove('active'); });
+    showcaseLabels.forEach(function(l) { l.classList.remove('active'); });
+    if (showcaseSlides[index]) showcaseSlides[index].classList.add('active');
+    if (showcaseLabels[index]) showcaseLabels[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % showcaseSlides.length);
+  }
+
+  if (showcaseSlides.length > 0) {
+    slideInterval = setInterval(nextSlide, 3000);
+    showcaseLabels.forEach(function(label) {
+      label.addEventListener('click', function() {
+        clearInterval(slideInterval);
+        goToSlide(parseInt(this.getAttribute('data-slide'), 10));
+        slideInterval = setInterval(nextSlide, 3000);
+      });
+    });
+  }
+
+  /* ------------------------------------------ */
   /* Stat Counter Animation                       */
   /* ------------------------------------------ */
   function animateCounter(el, target, prefix, suffix) {
