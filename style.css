@@ -378,20 +378,17 @@ button { cursor: pointer; font-family: inherit; }
 
 .tab-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 0;
   border-bottom: 1px solid var(--border-subtle);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-.tab-nav::-webkit-scrollbar { display: none; }
 
 .tab-btn {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 14px 24px;
+  padding: 14px 20px;
   color: var(--text-muted);
   border: none;
   background: none;
@@ -399,7 +396,6 @@ button { cursor: pointer; font-family: inherit; }
   position: relative;
   transition: color 300ms var(--ease);
   white-space: nowrap;
-  flex-shrink: 0;
 }
 .tab-btn:hover { color: var(--text-primary); }
 .tab-btn.active { color: var(--gold); }
