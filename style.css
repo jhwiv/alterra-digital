@@ -66,8 +66,10 @@ button { cursor: pointer; font-family: inherit; }
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+  transition: opacity 800ms var(--ease), transform 800ms var(--ease);
 }
+.reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal:nth-child(3) { transition-delay: 200ms; }
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
@@ -260,12 +262,13 @@ button { cursor: pointer; font-family: inherit; }
   height: 100%;
   object-fit: cover;
   object-position: center;
+  /* Parallax-like fixed feel on desktop */
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(13,25,41,0.92) 0%, rgba(13,25,41,0.7) 45%, rgba(13,25,41,0.35) 100%);
+  background: linear-gradient(105deg, rgba(13,25,41,0.95) 0%, rgba(13,25,41,0.75) 45%, rgba(13,25,41,0.4) 100%);
 }
 
 .hero::before {
@@ -487,15 +490,16 @@ button { cursor: pointer; font-family: inherit; }
   align-items: center;
 }
 .tab-visual img {
-  border-radius: var(--radius-lg);
-  max-height: 280px;
+  border-radius: 16px;
+  max-height: 400px;
   max-width: 100%;
   object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .feature-illustration {
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
   aspect-ratio: 5/4;
   display: flex;
   align-items: center;
@@ -508,6 +512,27 @@ button { cursor: pointer; font-family: inherit; }
 .feature-illustration svg {
   width: 100%;
   height: auto;
+}
+
+/* Product Demo Video */
+.product-video-wrap {
+  margin-top: 64px;
+  text-align: center;
+}
+.product-video-heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+.product-video {
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.4);
 }
 
 .section-hero-image {
@@ -559,10 +584,10 @@ button { cursor: pointer; font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 600ms var(--ease);
+  transition: transform 8s ease-out;
 }
 .demo-card:hover .demo-img-wrap img {
-  transform: scale(1.03);
+  transform: scale(1.08);
 }
 
 .demo-info {
@@ -828,7 +853,18 @@ button { cursor: pointer; font-family: inherit; }
   background: var(--navy-light);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.resource-doc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-hover));
 }
 .resource-doc-card .resource-icon { margin-bottom: 16px; }
 .resource-doc-card h4 {
@@ -1139,6 +1175,21 @@ button { cursor: pointer; font-family: inherit; }
 }
 .footer-nav a:hover { color: var(--gold); }
 
+/* Footer Social Links */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.footer-social a {
+  color: var(--text-faint);
+  transition: color 300ms var(--ease);
+}
+.footer-social a:hover {
+  color: var(--gold);
+}
+
 .footer-bottom {
   display: flex;
   justify-content: center;
@@ -1236,13 +1287,13 @@ button { cursor: pointer; font-family: inherit; }
 /* -------------------------------------------- */
 /* CREAM SECTION — Process overrides             */
 /* -------------------------------------------- */
-.section--cream .process-number { color: var(--gold); opacity: 0.7; }
+.section--cream .process-number { color: var(--navy); opacity: 0.15; }
 .section--cream .process-title { color: var(--navy); }
-.section--cream .process-desc { color: rgba(13,25,41,0.65); }
+.section--cream .process-desc { color: rgba(13,25,41,0.7); }
 .section--cream .pull-quote p { color: var(--navy); }
 .section--cream .pull-quote { border-color: rgba(13,25,41,0.1); }
 .section--cream .process-connector svg path,
-.section--cream .process-connector svg line { stroke: var(--navy); opacity: 0.3; }
+.section--cream .process-connector svg line { stroke: rgba(13, 25, 41, 0.25); opacity: 1; }
 
 /* -------------------------------------------- */
 /* TESTIMONIALS                                  */
@@ -1279,6 +1330,11 @@ button { cursor: pointer; font-family: inherit; }
   padding: 32px;
   display: flex;
   flex-direction: column;
+  transition: transform 400ms ease, box-shadow 400ms ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 .testimonial-card blockquote {
   font-family: var(--font-body);
@@ -1450,6 +1506,8 @@ button { cursor: pointer; font-family: inherit; }
   /* tab-split already stacked via flexbox */
 
   .demos-grid { grid-template-columns: 1fr; }
+
+  .product-video { max-width: 100%; }
 
   .process-steps {
     flex-direction: column;

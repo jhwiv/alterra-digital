@@ -6,6 +6,50 @@
   'use strict';
 
   /* ------------------------------------------ */
+  /* Stat Counter Animation                       */
+  /* ------------------------------------------ */
+  function animateCounter(el, target, prefix, suffix) {
+    prefix = prefix || '';
+    suffix = suffix || '';
+    var duration = 2000;
+    var startTime = performance.now();
+    var easeOut = function(t) { return 1 - Math.pow(1 - t, 3); };
+
+    function tick(now) {
+      var elapsed = now - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var current = Math.round(target * easeOut(progress));
+      el.textContent = prefix + current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Observe stat-bar for counter animation
+  var statBar = document.querySelector('.stat-bar');
+  if (statBar && 'IntersectionObserver' in window) {
+    var statObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var statValues = statBar.querySelectorAll('.stat-value');
+          statValues.forEach(function(sv) {
+            var text = sv.textContent.trim();
+            if (text === '$35B') {
+              animateCounter(sv, 35, '$', 'B');
+            } else if (text.indexOf('20,000') !== -1) {
+              animateCounter(sv, 20000, '', '+');
+            } else if (text === '76%') {
+              animateCounter(sv, 76, '', '%');
+            }
+          });
+          statObserver.unobserve(statBar);
+        }
+      });
+    }, { threshold: 0.3 });
+    statObserver.observe(statBar);
+  }
+
+  /* ------------------------------------------ */
   /* Scroll Reveal (IntersectionObserver)         */
   /* ------------------------------------------ */
   var revealElements = document.querySelectorAll('.reveal');
