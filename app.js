@@ -459,4 +459,17 @@
     }
   });
 
+  /* ------------------------------------------ */
+  /* Scroll Progress Bar                         */
+  /* ------------------------------------------ */
+  var progressBar = document.getElementById('scrollProgress');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+  }
+
 })();
