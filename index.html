@@ -54,7 +54,7 @@
       <a href="#demos" class="nav-link" data-section="demos">Demos</a>
       <a href="#pricing" class="nav-link" data-section="pricing">Pricing</a>
       <a href="#resources" class="nav-link" data-section="resources">Resources</a>
-      <a href="#contact" class="nav-link" data-section="contact">About</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
       <a href="#contact" class="nav-cta-btn">Request a Pilot →</a>
     </div>
   </div>
@@ -64,6 +64,9 @@
 <!-- 1. HERO                                       -->
 <!-- ============================================ -->
 <section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="./assets/alterra-hero-cinematic.png" alt="" loading="eager">
+  </div>
   <div class="hero-inner">
     <div class="hero-left reveal">
       <h1 class="hero-title">Bespoke Digital<br>Travel Companions</h1>
@@ -263,6 +266,11 @@
   </div>
 </section>
 
+<!-- Full-bleed image divider -->
+<div class="section-divider-image">
+  <img src="./assets/alterra-divider-flatlay.png" alt="Luxury travel planning" loading="lazy">
+</div>
+
 <!-- ============================================ -->
 <!-- 3. LIVE DEMOS                                 -->
 <!-- ============================================ -->
@@ -325,7 +333,7 @@
 <!-- ============================================ -->
 <!-- 4. HOW IT WORKS                               -->
 <!-- ============================================ -->
-<section class="section section--navy" id="process">
+<section class="section section--cream" id="process">
   <div class="container">
     <div class="section-label reveal">THE PROCESS</div>
     <h2 class="section-heading reveal">How It Works</h2>
@@ -462,6 +470,40 @@
 </section>
 
 <!-- ============================================ -->
+<!-- TESTIMONIALS                                   -->
+<!-- ============================================ -->
+<section class="section section--testimonials" id="testimonials">
+  <div class="testimonials-bg" style="background-image: url('./assets/alterra-testimonial-bg.png')"></div>
+  <div class="container">
+    <div class="section-label reveal">WHAT PARTNERS SAY</div>
+    <h2 class="section-heading reveal">Trusted by Discerning Advisors</h2>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <blockquote>"My client opened the companion at the airport and immediately called me to say it was the most impressive thing she'd ever received from a travel advisor. That one reaction paid for itself ten times over."</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Sarah Whitfield</span>
+          <span class="testimonial-role">Virtuoso Advisor · London</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I've been in luxury travel for 22 years. This is the first technology product I've seen that actually enhances the personal touch rather than replacing it."</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">David Montague-Harris</span>
+          <span class="testimonial-role">Founder, Meridian Journeys · New York</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"The street views alone are worth it. My client walked into Restaurant Tim Raue in Berlin knowing exactly which door to enter and where to find the host stand. That level of confidence is what separates good travel from great travel."</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Catherine Beaumont</span>
+          <span class="testimonial-role">Travel Designer · Sydney</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- 6. RESOURCES                                  -->
 <!-- ============================================ -->
 <section class="section section--navy" id="resources">
@@ -494,7 +536,15 @@
               </div>
               <h4>Advisor Pricing Playbook</h4>
               <p>When to absorb the cost vs. line-item. Client-facing language. Fee-model integration.</p>
-              <span class="badge-coming-soon">COMING SOON</span>
+              <button class="btn btn-gold btn-sm" onclick="window.open('#','_blank')">Download PDF</button>
+            </div>
+            <div class="resource-doc-card">
+              <div class="resource-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h4>Client Presentation Deck</h4>
+              <p>A ready-to-share overview of how the digital companion elevates the client experience.</p>
+              <button class="btn btn-gold btn-sm" onclick="window.open('#','_blank')">Download PDF</button>
             </div>
           </div>
         </div>
@@ -658,6 +708,41 @@
 </section>
 
 <!-- ============================================ -->
+<!-- ABOUT                                         -->
+<!-- ============================================ -->
+<section class="section section--cream" id="about">
+  <div class="container">
+    <div class="section-label reveal" style="color: var(--gold)">ABOUT</div>
+    <h2 class="section-heading reveal" style="color: var(--navy)">The Team</h2>
+    <p class="about-intro reveal">Founded by two guys who got tired of watching $50,000 trips get documented in Comic Sans PDFs.</p>
+    
+    <div class="founders-grid reveal">
+      <div class="founder-card">
+        <div class="founder-img-wrap">
+          <img src="./assets/alterra-founder-1.png" alt="Douche Bag One" loading="lazy">
+        </div>
+        <h3 class="founder-name">Douche Bag One</h3>
+        <span class="founder-title">Chief Executive Douchebag</span>
+        <p class="founder-bio">Former concierge at a hotel so exclusive it doesn’t have a name — just GPS coordinates texted to you after a background check. Spent 15 years perfecting the art of saying “of course, sir” while mentally calculating the tip. Once arranged for a client’s dog to have a private gondola ride in Venice. The dog was unimpressed. Holds a degree in Hospitality from Cornell, which he mentions within 4 minutes of meeting anyone.</p>
+      </div>
+      <div class="founder-card">
+        <div class="founder-img-wrap">
+          <img src="./assets/alterra-founder-2.png" alt="Douche Bag Two" loading="lazy">
+        </div>
+        <h3 class="founder-name">Douche Bag Two</h3>
+        <span class="founder-title">Chief Technology Douchebag</span>
+        <p class="founder-bio">Left a perfectly good job at Google because “the free food wasn’t organic enough.” Built his first app at 19, his first startup at 23, and his first mid-life crisis at 27. Claims to have invented the concept of “mobile-first design” at a WeWork in Williamsburg. His LinkedIn bio says “serial entrepreneur” unironically. Owns four identical black turtlenecks and refers to Steve Jobs as “Steve” like they were friends. They were not.</p>
+      </div>
+    </div>
+    
+    <div class="about-mission reveal">
+      <h3 class="mission-heading">Why We Exist</h3>
+      <p class="mission-text">Luxury travel advisors are artisans. They spend weeks crafting extraordinary journeys — hand-picking restaurants, negotiating suite upgrades, coordinating private guides. Then they deliver it all in a PDF that looks like it was made in Microsoft Word 2003. We build the digital companion that matches the quality of the trip itself.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- 7. CONTACT                                    -->
 <!-- ============================================ -->
 <section class="section section--navy" id="contact">
@@ -678,7 +763,7 @@
           <a href="mailto:hello@alterradigital.com" class="contact-email">hello@alterradigital.com</a>
         </div>
       </div>
-      <div class="contact-form-wrap">
+      <div class="contact-form-wrap contact-form-wrap--warm">
         <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
@@ -726,6 +811,7 @@
       <a href="#demos">Demos</a>
       <a href="#pricing">Pricing</a>
       <a href="#resources">Resources</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="footer-bottom">
