@@ -121,14 +121,28 @@
     <h2 class="section-heading reveal">What Your Clients Experience</h2>
 
     <div class="tabs reveal" data-tabs="product">
-      <div class="tab-nav">
-        <button class="tab-btn active" data-tab="street-views">Street Views</button>
-        <button class="tab-btn" data-tab="pronunciation">Pronunciation</button>
-        <button class="tab-btn" data-tab="weather">Live Weather</button>
-        <button class="tab-btn" data-tab="offline">Offline Mode</button>
-        <button class="tab-btn" data-tab="search">Location Search</button>
-        <button class="tab-btn" data-tab="concierge">Trip Concierge</button>
-        <button class="tab-btn" data-tab="add-home">Add-to-Home</button>
+      <div class="tab-nav-grouped">
+        <div class="tab-group">
+          <span class="tab-group-label">Core Experience</span>
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="street-views">Street Views</button>
+            <button class="tab-btn" data-tab="pronunciation">Pronunciation</button>
+            <button class="tab-btn" data-tab="weather">Live Weather</button>
+            <button class="tab-btn" data-tab="offline">Offline Mode</button>
+            <button class="tab-btn" data-tab="search">Location Search</button>
+            <button class="tab-btn" data-tab="concierge">Trip Concierge</button>
+            <button class="tab-btn" data-tab="add-home">Add-to-Home</button>
+          </div>
+        </div>
+        <div class="tab-group">
+          <span class="tab-group-label">Adaptive Intelligence</span>
+          <div class="tab-nav">
+            <button class="tab-btn" data-tab="webcams">Live Webcams</button>
+            <button class="tab-btn" data-tab="weather-alt">Weather Alternatives</button>
+            <button class="tab-btn" data-tab="map">Interactive Map</button>
+            <button class="tab-btn" data-tab="transit">Transit &amp; Reminders</button>
+          </div>
+        </div>
       </div>
       <div class="tab-panels">
         <div class="tab-panel active" data-panel="street-views">
@@ -256,6 +270,69 @@
             </div>
           </div>
         </div>
+
+        <!-- Adaptive Intelligence Tabs -->
+        <div class="tab-panel" data-panel="webcams">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Live Webcams</h3>
+              <p class="tab-feature-desc">See it live before you arrive. Real-time camera feeds from Nyhavn harbor, Bahnhofstrasse, the hotel entrance — embedded right in the guide. Your client watches the sun set over their destination the night before they fly.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>No travel app offers this — a live window into the destination before departure</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-webcam.webp" alt="Live webcam feed from Nyhavn, Copenhagen" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="weather-alt">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Weather-Aware Alternatives</h3>
+              <p class="tab-feature-desc">Rain forecast at 2 PM? The guide already knows. Uetliberg mountain hike swaps to the Landesmuseum. Boat cruise becomes a chocolate tasting. Every outdoor plan has an indoor alternative — pre-loaded and ready to go.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>The itinerary adapts — your clients never have to figure out a backup plan</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-weather-alt.webp" alt="Weather swap showing alternative plans for rainy days" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="map">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Interactive Itinerary Map</h3>
+              <p class="tab-feature-desc">Every stop plotted. Every day filterable. Tap Friday and see only Friday's route. Tap a pin and get the venue details, walking directions, and transit options. The full trip — visualized on a single, elegant dark-themed map.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Clients instantly understand the shape of their trip — no mental gymnastics</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-map.webp" alt="Interactive map of Zürich with gold route pins and day filters" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="transit">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Transit &amp; Departure Reminders</h3>
+              <p class="tab-feature-desc">A persistent flight banner — "ZRH 8:25 PM · Leave by 6:00 PM" — stays visible all day. Below it, every tram, train, and walking leg is timestamped with a Zürich Card badge showing what's already covered. No missed connections. No surprise fares.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Actionable reminders — not just "your flight is tonight" but "leave at 6 PM"</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-transit.webp" alt="Flight departure banner and transit schedule with Zürich Card badges" loading="lazy">
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -271,6 +348,10 @@
               <img src="./assets/alterra-screen-weather.webp" alt="Live Weather" class="showcase-slide">
               <img src="./assets/alterra-screen-search.webp" alt="Location Search" class="showcase-slide">
               <img src="./assets/alterra-screen-concierge.webp" alt="Trip Concierge" class="showcase-slide">
+              <img src="./assets/alterra-screen-webcam.webp" alt="Live Webcams" class="showcase-slide">
+              <img src="./assets/alterra-screen-weather-alt.webp" alt="Weather Alternatives" class="showcase-slide">
+              <img src="./assets/alterra-screen-map.webp" alt="Interactive Map" class="showcase-slide">
+              <img src="./assets/alterra-screen-transit.webp" alt="Transit & Reminders" class="showcase-slide">
             </div>
           </div>
         </div>
@@ -280,6 +361,10 @@
           <span class="showcase-label" data-slide="2">Weather</span>
           <span class="showcase-label" data-slide="3">Search</span>
           <span class="showcase-label" data-slide="4">Concierge</span>
+          <span class="showcase-label" data-slide="5">Webcams</span>
+          <span class="showcase-label" data-slide="6">Weather Alt</span>
+          <span class="showcase-label" data-slide="7">Map</span>
+          <span class="showcase-label" data-slide="8">Transit</span>
         </div>
       </div>
     </div>

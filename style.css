@@ -523,6 +523,32 @@ button { cursor: pointer; font-family: inherit; }
 /* -------------------------------------------- */
 .tabs { margin-top: 32px; }
 
+/* Grouped Tab Navigation */
+.tab-nav-grouped {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tab-group {
+  position: relative;
+}
+
+.tab-group + .tab-group {
+  margin-top: 6px;
+}
+
+.tab-group-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.5;
+  display: block;
+  padding: 8px 20px 0;
+}
+
 .tab-nav {
   display: flex;
   flex-wrap: wrap;
