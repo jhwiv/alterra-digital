@@ -127,6 +127,7 @@
         <button class="tab-btn" data-tab="weather">Live Weather</button>
         <button class="tab-btn" data-tab="offline">Offline Mode</button>
         <button class="tab-btn" data-tab="search">Location Search</button>
+        <button class="tab-btn" data-tab="concierge">Trip Concierge</button>
         <button class="tab-btn" data-tab="add-home">Add-to-Home</button>
       </div>
       <div class="tab-panels">
@@ -204,25 +205,29 @@
           <div class="tab-split">
             <div class="tab-text">
               <h3 class="tab-feature-title">Location-Aware Search</h3>
-              <p class="tab-feature-desc">Client taps "Coffee" — three closest cafés from wherever they're standing. Every curated recommendation is distance-aware and context-sensitive.</p>
+              <p class="tab-feature-desc">Your client taps "Coffee" and sees the three closest cafés from wherever they're standing. Or "Pharmacy" at 11 PM in Copenhagen. Every category — restaurants, bars, ATMs, gelato, bookshops — is one tap away, distance-sorted and context-aware. No Googling, no guessing, no wrong turns.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Instant discovery — no Googling, no guessing, no wrong turns</span>
+                <span>Works even without GPS — falls back to the city center so results are always relevant</span>
               </div>
             </div>
             <div class="tab-visual">
-              <div class="feature-illustration">
-                <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="70" r="50" stroke="var(--gold)" stroke-width="1" opacity="0.2"/>
-                  <circle cx="100" cy="70" r="35" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
-                  <circle cx="100" cy="70" r="20" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
-                  <circle cx="100" cy="70" r="4" fill="var(--gold)"/>
-                  <circle cx="75" cy="50" r="3" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
-                  <circle cx="130" cy="65" r="3" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
-                  <circle cx="90" cy="100" r="3" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
-                  <text x="100" y="145" text-anchor="middle" fill="var(--gold)" font-family="var(--font-mono)" font-size="8" opacity="0.8">3 CAFÉS WITHIN 200M</text>
-                </svg>
+              <img src="./assets/alterra-screen-search.webp" alt="Location-aware search showing category buttons for Coffee, Restaurant, Pharmacy and more" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="concierge">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Trip Concierge</h3>
+              <p class="tab-feature-desc">A built-in assistant that knows every detail of the trip. "What's next?" "Will it rain today?" "Where's dinner tonight?" Your client asks in plain language and gets instant, trip-specific answers — not generic search results. It's like having the advisor in their pocket.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Quick-tap suggestions plus free-text — answers grounded in the actual itinerary</span>
               </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-concierge.webp" alt="Trip Concierge chat interface with quick suggestion buttons and conversation" loading="lazy">
             </div>
           </div>
         </div>
@@ -264,6 +269,8 @@
               <img src="./assets/alterra-screen-streetview.webp" alt="360° Street Views" class="showcase-slide active">
               <img src="./assets/alterra-screen-pronunciation.webp" alt="Pronunciation Engine" class="showcase-slide">
               <img src="./assets/alterra-screen-weather.webp" alt="Live Weather" class="showcase-slide">
+              <img src="./assets/alterra-screen-search.webp" alt="Location Search" class="showcase-slide">
+              <img src="./assets/alterra-screen-concierge.webp" alt="Trip Concierge" class="showcase-slide">
             </div>
           </div>
         </div>
@@ -271,6 +278,8 @@
           <span class="showcase-label active" data-slide="0">Street Views</span>
           <span class="showcase-label" data-slide="1">Pronunciation</span>
           <span class="showcase-label" data-slide="2">Weather</span>
+          <span class="showcase-label" data-slide="3">Search</span>
+          <span class="showcase-label" data-slide="4">Concierge</span>
         </div>
       </div>
     </div>
