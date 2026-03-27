@@ -149,6 +149,9 @@
             <button class="tab-btn" data-tab="weather-alt">Weather Alternatives</button>
             <button class="tab-btn" data-tab="map">Interactive Map</button>
             <button class="tab-btn" data-tab="transit">Transit &amp; Reminders</button>
+            <button class="tab-btn" data-tab="menu">Restaurant Menus</button>
+            <button class="tab-btn" data-tab="time-zones">Dual Timezone</button>
+            <button class="tab-btn" data-tab="auto-nav">Auto-Navigation</button>
           </div>
         </div>
       </div>
@@ -156,15 +159,15 @@
         <div class="tab-panel active" data-panel="street-views">
           <div class="tab-split">
             <div class="tab-text">
-              <h3 class="tab-feature-title">360° Street Views</h3>
-              <p class="tab-feature-desc">Your client walks into the hotel lobby before they land. Every restaurant entrance, every train platform, every meeting point — captured in immersive panoramas they can explore with a swipe.</p>
+              <h3 class="tab-feature-title">Inline 360° Street Views</h3>
+              <p class="tab-feature-desc">Your client taps a venue and an immersive 360° Street View overlay opens directly on the page — no pop-ups, no new tabs. Every restaurant entrance, train platform, and meeting point rendered as an inline iframe modal they can pan, tilt, and explore without leaving the guide.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>Eliminates arrival anxiety — clients feel like they've been there before</span>
               </div>
             </div>
             <div class="tab-visual">
-              <img src="./assets/alterra-screen-streetview.webp" alt="360° street view in Zürich with location pins" loading="lazy">
+              <img src="./assets/alterra-screen-streetview.webp" alt="Inline 360° Street View overlay in the travel companion" loading="lazy">
             </div>
           </div>
         </div>
@@ -226,30 +229,30 @@
         <div class="tab-panel" data-panel="search">
           <div class="tab-split">
             <div class="tab-text">
-              <h3 class="tab-feature-title">Location-Aware Search</h3>
-              <p class="tab-feature-desc">Your client taps "Coffee" and sees the three closest cafés from wherever they're standing. Or "Pharmacy" at 11 PM in Copenhagen. Every category — restaurants, bars, ATMs, gelato, bookshops — is one tap away, distance-sorted and context-aware. No Googling, no guessing, no wrong turns.</p>
+              <h3 class="tab-feature-title">Full-Screen Local Search</h3>
+              <p class="tab-feature-desc">A full-screen search overlay with a visual category grid — Coffee, Restaurant, Pharmacy, ATM, Bar, Gelato, WC, Books, Souvenirs — all one tap away. GPS-aware location detection places your client at the center, with a two-tier search radius (500 m, then 1,200 m) that ensures results are always relevant. Each result shows walking time to the POI, with a Google Maps fallback for turn-by-turn directions.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>Works even without GPS — falls back to the city center so results are always relevant</span>
               </div>
             </div>
             <div class="tab-visual">
-              <img src="./assets/alterra-screen-search.webp" alt="Location-aware search showing category buttons for Coffee, Restaurant, Pharmacy and more" loading="lazy">
+              <img src="./assets/alterra-screen-search.webp" alt="Full-screen local search overlay with category grid and walking times" loading="lazy">
             </div>
           </div>
         </div>
         <div class="tab-panel" data-panel="concierge">
           <div class="tab-split">
             <div class="tab-text">
-              <h3 class="tab-feature-title">Trip Concierge</h3>
-              <p class="tab-feature-desc">A built-in assistant that knows every detail of the trip. "What's next?" "Will it rain today?" "Where's dinner tonight?" Your client asks in plain language and gets instant, trip-specific answers — not generic search results. It's like having the advisor in their pocket.</p>
+              <h3 class="tab-feature-title">GPS &amp; Time-Aware Concierge</h3>
+              <p class="tab-feature-desc">An AI concierge that knows the trip, the time, and the location. A quick-action grid — What's Next, Weather, Dinner, Directions, Schedule, History — gives instant answers. Free-text questions return markdown-rendered responses with tappable links. A bidirectional toggle switches seamlessly to Local Search and back, so your client never leaves the conversation flow.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>Quick-tap suggestions plus free-text — answers grounded in the actual itinerary</span>
               </div>
             </div>
             <div class="tab-visual">
-              <img src="./assets/alterra-screen-concierge.webp" alt="Trip Concierge chat interface with quick suggestion buttons and conversation" loading="lazy">
+              <img src="./assets/alterra-screen-concierge.webp" alt="GPS-aware AI concierge with quick-action grid and markdown responses" loading="lazy">
             </div>
           </div>
         </div>
@@ -283,15 +286,15 @@
         <div class="tab-panel" data-panel="webcams">
           <div class="tab-split">
             <div class="tab-text">
-              <h3 class="tab-feature-title">Live Webcams</h3>
-              <p class="tab-feature-desc">See it live before you arrive. Real-time camera feeds from Nyhavn harbor, Bahnhofstrasse, the hotel entrance — embedded right in the guide. Your client watches the sun set over their destination the night before they fly.</p>
+              <h3 class="tab-feature-title">Inline Live Webcams</h3>
+              <p class="tab-feature-desc">Real-time camera feeds from Nyhavn harbor, Bahnhofstrasse, the hotel entrance — embedded as inline overlays directly on the page for supported cams, with a new-tab fallback for others. Your client watches the sun set over their destination the night before they fly, without ever leaving the guide.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>No travel app offers this — a live window into the destination before departure</span>
               </div>
             </div>
             <div class="tab-visual">
-              <img src="./assets/alterra-screen-webcam.webp" alt="Live webcam feed from Nyhavn, Copenhagen" loading="lazy">
+              <img src="./assets/alterra-screen-webcam.webp" alt="Inline webcam overlay embedded on the travel companion page" loading="lazy">
             </div>
           </div>
         </div>
@@ -314,14 +317,14 @@
           <div class="tab-split">
             <div class="tab-text">
               <h3 class="tab-feature-title">Interactive Itinerary Map</h3>
-              <p class="tab-feature-desc">Every stop plotted. Every day filterable. Tap Friday and see only Friday's route. Tap a pin and get the venue details, walking directions, and transit options. The full trip — visualized on a single, elegant dark-themed map.</p>
+              <p class="tab-feature-desc">An interactive Leaflet map with day filtering — tap Saturday and see only Saturday's stops. Clickable destination popups reveal venue details and walking directions. For road trips, OSRM-powered route lines trace the driving path between cities. The full trip visualized on a single, elegant dark-themed map.</p>
               <div class="tab-benefit">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span>Clients instantly understand the shape of their trip — no mental gymnastics</span>
               </div>
             </div>
             <div class="tab-visual">
-              <img src="./assets/alterra-screen-map.webp" alt="Interactive map of Zürich with gold route pins and day filters" loading="lazy">
+              <img src="./assets/alterra-screen-map.webp" alt="Interactive Leaflet map with day filters and clickable destination popups" loading="lazy">
             </div>
           </div>
         </div>
@@ -341,6 +344,66 @@
           </div>
         </div>
 
+        <!-- New v4.0 Feature Tabs -->
+        <div class="tab-panel" data-panel="menu">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Restaurant Menus</h3>
+              <p class="tab-feature-desc">One-tap restaurant menus sourced from real venues. Full menus with sections — appetizers, mains, desserts — complete with prices and descriptions. Your client scrolls through the evening's options without leaving the app, arriving at dinner already knowing what they want.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Clients preview the menu in advance — no awkward browsing at the table</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-menu.webp" alt="Restaurant menu pop-up with sections, prices, and descriptions" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="time-zones">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Dual Timezone Widget</h3>
+              <p class="tab-feature-desc">A floating time pill that shows both home and destination time zones simultaneously. As the itinerary progresses through multiple cities, the widget automatically switches between local times — so your client always knows what time it is back home and where they are now.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>No mental math — both clocks visible at a glance, always current</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <img src="./assets/alterra-screen-timepill.webp" alt="Dual timezone floating widget showing home and destination times" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="auto-nav">
+          <div class="tab-split">
+            <div class="tab-text">
+              <h3 class="tab-feature-title">Smart Auto-Navigation</h3>
+              <p class="tab-feature-desc">The companion automatically scrolls to the current day's section based on real-time date detection. When your client opens the app on Saturday, they land right on Saturday's itinerary — no hunting through tabs or scrolling past days already lived.</p>
+              <div class="tab-benefit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="var(--gold)" stroke-width="1.5"/><polyline points="6 10 9 13 14 7" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Zero friction — the right content appears the moment the app opens</span>
+              </div>
+            </div>
+            <div class="tab-visual">
+              <div class="feature-illustration">
+                <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="60" y="10" width="80" height="140" rx="12" stroke="var(--gold)" stroke-width="1.5"/>
+                  <rect x="70" y="30" width="60" height="12" rx="3" stroke="var(--gold)" stroke-width="0.75" opacity="0.25"/>
+                  <text x="100" y="39" text-anchor="middle" fill="var(--gold)" font-family="var(--font-mono)" font-size="6" opacity="0.3">FRI</text>
+                  <rect x="70" y="50" width="60" height="12" rx="3" stroke="var(--gold)" stroke-width="1.5" fill="rgba(200,168,75,0.12)"/>
+                  <text x="100" y="59" text-anchor="middle" fill="var(--gold)" font-family="var(--font-mono)" font-size="6" font-weight="500">SAT ← TODAY</text>
+                  <rect x="70" y="70" width="60" height="12" rx="3" stroke="var(--gold)" stroke-width="0.75" opacity="0.25"/>
+                  <text x="100" y="79" text-anchor="middle" fill="var(--gold)" font-family="var(--font-mono)" font-size="6" opacity="0.3">SUN</text>
+                  <path d="M100 95 l0 20" stroke="var(--gold)" stroke-width="1" opacity="0.6"/>
+                  <path d="M94 110 l6 6 l6 -6" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                  <text x="100" y="132" text-anchor="middle" fill="var(--gold)" font-family="var(--font-mono)" font-size="7" opacity="0.8">AUTO‑SCROLL</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -351,15 +414,17 @@
         <div class="showcase-phone-bezel">
           <div class="showcase-phone-screen">
             <div class="showcase-slides">
-              <img src="./assets/alterra-screen-streetview.webp" alt="360° Street Views" class="showcase-slide active">
+              <img src="./assets/alterra-screen-streetview.webp" alt="Inline 360° Street Views" class="showcase-slide active">
               <img src="./assets/alterra-screen-pronunciation.webp" alt="Pronunciation Engine" class="showcase-slide">
               <img src="./assets/alterra-screen-weather.webp" alt="Live Weather" class="showcase-slide">
-              <img src="./assets/alterra-screen-search.webp" alt="Location Search" class="showcase-slide">
-              <img src="./assets/alterra-screen-concierge.webp" alt="Trip Concierge" class="showcase-slide">
-              <img src="./assets/alterra-screen-webcam.webp" alt="Live Webcams" class="showcase-slide">
+              <img src="./assets/alterra-screen-search.webp" alt="Full-Screen Local Search" class="showcase-slide">
+              <img src="./assets/alterra-screen-concierge.webp" alt="GPS-Aware Concierge" class="showcase-slide">
+              <img src="./assets/alterra-screen-webcam.webp" alt="Inline Live Webcams" class="showcase-slide">
               <img src="./assets/alterra-screen-weather-alt.webp" alt="Weather Alternatives" class="showcase-slide">
               <img src="./assets/alterra-screen-map.webp" alt="Interactive Map" class="showcase-slide">
-              <img src="./assets/alterra-screen-transit.webp" alt="Transit & Reminders" class="showcase-slide">
+              <img src="./assets/alterra-screen-transit.webp" alt="Transit &amp; Reminders" class="showcase-slide">
+              <img src="./assets/alterra-screen-menu.webp" alt="Restaurant Menus" class="showcase-slide">
+              <img src="./assets/alterra-screen-timepill.webp" alt="Dual Timezone Widget" class="showcase-slide">
             </div>
           </div>
         </div>
@@ -373,6 +438,8 @@
           <span class="showcase-label" data-slide="6">Weather Alt</span>
           <span class="showcase-label" data-slide="7">Map</span>
           <span class="showcase-label" data-slide="8">Transit</span>
+          <span class="showcase-label" data-slide="9">Menus</span>
+          <span class="showcase-label" data-slide="10">Timezone</span>
         </div>
       </div>
     </div>
@@ -686,7 +753,7 @@
                 <span>Dining Intelligence</span>
                 <span class="accordion-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></span>
               </button>
-              <div class="accordion-content"><p>Dress code guidance, best-table notes, allergy/dietary precision, sommelier pre-orders.</p></div>
+              <div class="accordion-content"><p>Dress code guidance, best-table notes, allergy/dietary precision, sommelier pre-orders. Now includes one-tap restaurant menu pop-ups with real venue data — full menus with sections, prices, and descriptions sourced directly from the restaurant.</p></div>
             </div>
             <div class="accordion-item">
               <button class="accordion-trigger" aria-expanded="false">
@@ -742,7 +809,7 @@
                 <li><svg class="mark-x" width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Template-driven output</li>
                 <li><svg class="mark-x" width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>$39–$399/month subscription</li>
                 <li><svg class="mark-x" width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Limited design customization</li>
-                <li><svg class="mark-x" width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>No Street Views, pronunciation, or weather</li>
+                <li><svg class="mark-x" width="16" height="16" viewBox="0 0 16 16" fill="none"><line x1="4" y1="4" x2="12" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="4" x2="4" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>No Street Views, menus, GPS search, or AI concierge</li>
               </ul>
             </div>
             <div class="comparison-divider-vert"></div>
@@ -753,7 +820,7 @@
                 <li><svg class="mark-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Editorial-grade bespoke quality</li>
                 <li><svg class="mark-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Per-trip pricing ($495–$2,500)</li>
                 <li><svg class="mark-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom for every journey</li>
-                <li><svg class="mark-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>360° views, pronunciation, live weather, offline</li>
+                <li><svg class="mark-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>15+ integrated features: inline street views, GPS search, AI concierge, restaurant menus, dual timezone, auto-navigation, inline webcams, and more</li>
               </ul>
             </div>
           </div>
