@@ -2,7 +2,7 @@
   "name": "Alterra Digital",
   "short_name": "Alterra",
   "description": "Tailored Digital Travel Companions",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#0D1929",
   "theme_color": "#0D1929",
