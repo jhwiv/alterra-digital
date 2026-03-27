@@ -1782,4 +1782,37 @@ button { cursor: pointer; font-family: inherit; }
   .contact-form-wrap { padding: 24px; }
   .section-divider-image { height: 180px; }
   .section--testimonials { padding: 64px 0; }
+
+  /* ── Product feature tabs: fit on mobile ── */
+  .tab-btn {
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    padding: 10px 10px;
+  }
+  .tab-group-label {
+    font-size: 8px;
+    padding: 6px 12px 0;
+  }
+  .tab-nav {
+    gap: 0;
+  }
+
+  /* ── Phone mockup: prevent left-edge clipping ── */
+  .tab-visual {
+    padding: 0 16px;
+  }
+  .tab-visual img {
+    max-width: 220px;
+    max-height: 420px;
+  }
+  .tab-split {
+    padding: 24px 0;
+    gap: 20px;
+  }
+  .tab-feature-title {
+    font-size: 22px;
+  }
+  .tab-feature-desc {
+    font-size: 15px;
+  }
 }
