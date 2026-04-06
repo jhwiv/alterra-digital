@@ -50,9 +50,9 @@
   if (nav) {
     window.addEventListener('scroll', function() {
       if (window.scrollY > 100) {
-        nav.style.background = 'rgba(35, 29, 21, 0.98)';
+        nav.style.background = 'rgba(250, 246, 238, 0.97)';
       } else {
-        nav.style.background = 'rgba(35, 29, 21, 0.92)';
+        nav.style.background = 'rgba(250, 246, 238, 0.95)';
       }
     }, { passive: true });
   }

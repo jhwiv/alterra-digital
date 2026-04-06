@@ -4,8 +4,8 @@
   "description": "Tailored Digital Travel Companions",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#231D15",
-  "theme_color": "#231D15",
+  "background_color": "#1B2A4A",
+  "theme_color": "#1B2A4A",
   "icons": [
     {
       "src": "assets/icon-192.png",

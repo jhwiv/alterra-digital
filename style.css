@@ -6,19 +6,35 @@
 /* CSS Custom Properties                         */
 /* -------------------------------------------- */
 :root {
-  --navy: #231D15;
-  --navy-light: #2E2519;
-  --navy-lighter: #3A2F1F;
+  /* ── Exact zurich-weekend.com palette ── */
+  --navy: #1B2A4A;
+  --navy2: #0D1929;
+  --navy3: #162238;
+  --navy-light: #0D1929;
+  --navy-lighter: #162238;
   --cream: #FAF6EE;
-  --cream-dark: #F0EBE0;
-  --gold: #8B7D55;
-  --gold-hover: #A89A6E;
-  --gold-dim: rgba(139, 125, 85, 0.15);
-  --text-primary: #FAF6EE;
-  --text-muted: rgba(250, 246, 238, 0.7);
-  --text-faint: rgba(250, 246, 238, 0.3);
-  --border-subtle: rgba(139, 125, 85, 0.15);
-  --border-gold: rgba(139, 125, 85, 0.3);
+  --cream2: #F0EBE1;
+  --cream-dark: #F0EBE1;
+  --gold: #C8A84B;
+  --gold-text: #806826;
+  --gold-hover: #E8C96B;
+  --gold2: #E8C96B;
+  --gold-dim: rgba(200, 168, 75, 0.12);
+  --steel: #5A6A7A;
+  /* Light-mode text (body/cream sections) */
+  --text-primary: #2A2A2A;
+  --text-muted: #5C6C7C;
+  --text-faint: rgba(42, 42, 42, 0.4);
+  /* Dark-section text (for section--navy overrides) */
+  --text-on-dark: #FAF6EE;
+  --text-muted-on-dark: rgba(250, 246, 238, 0.7);
+  --text-faint-on-dark: rgba(250, 246, 238, 0.3);
+  /* Borders & dividers */
+  --border-subtle: rgba(212, 201, 176, 0.4);
+  --border-gold: rgba(200, 168, 75, 0.3);
+  --divider: #D4C9B0;
+  --divider2: rgba(212, 201, 176, 0.4);
+  /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Crimson Pro', Georgia, serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
@@ -42,8 +58,8 @@ html {
 }
 
 ::selection {
-  background: rgba(139, 125, 85, 0.25);
-  color: var(--text-primary);
+  background: rgba(200, 168, 75, 0.25);
+  color: var(--navy);
 }
 
 body {
@@ -51,7 +67,7 @@ body {
   font-size: 17px;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--navy);
+  background: var(--cream);
   overflow-x: hidden;
 }
 
@@ -72,7 +88,7 @@ button { cursor: pointer; font-family: inherit; }
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: var(--navy);
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,7 +115,7 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--gold);
+  color: var(--navy);
   line-height: 1;
 }
 .loader-sub {
@@ -107,8 +123,8 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 9px;
   font-weight: 400;
   letter-spacing: 0.32em;
-  color: var(--gold);
-  opacity: 0.6;
+  color: var(--steel);
+  opacity: 0.8;
   margin-top: 4px;
 }
 @keyframes loaderFadeIn {
@@ -173,10 +189,10 @@ button { cursor: pointer; font-family: inherit; }
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
-  background: rgba(13, 25, 41, 0.92);
+  background: rgba(250, 246, 238, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--divider);
   transition: background 400ms var(--ease);
 }
 
@@ -197,7 +213,7 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--gold);
+  color: var(--navy);
 }
 
 .nav-links {
@@ -283,7 +299,7 @@ button { cursor: pointer; font-family: inherit; }
 .btn-gold:hover {
   background: var(--gold-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(139, 125, 85, 0.3);
+  box-shadow: 0 4px 20px rgba(200, 168, 75, 0.3);
 }
 .btn-outline {
   background: transparent;
@@ -303,9 +319,17 @@ button { cursor: pointer; font-family: inherit; }
 .section {
   padding: 100px 0;
 }
-.section--navy { background: var(--navy); }
+.section--navy {
+  background: var(--navy);
+  color: var(--text-on-dark);
+  /* Scoped vars: all var() lookups inside dark sections get dark-mode values */
+  --text-primary: var(--text-on-dark);
+  --text-muted: var(--text-muted-on-dark);
+  --text-faint: var(--text-faint-on-dark);
+  --border-subtle: rgba(250, 246, 238, 0.15);
+}
 .section--demos {
-  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+  background: var(--cream);
 }
 
 /* Section Accent Line */
@@ -325,6 +349,37 @@ button { cursor: pointer; font-family: inherit; }
 .section--cream .section-label { color: var(--gold); }
 .section--cream .section-heading { color: var(--navy); }
 .section--cream .section-subtitle { color: rgba(13,25,41,0.6); }
+/* -------------------------------------------- */
+/* CREAM SECTION — card backgrounds override     */
+/* -------------------------------------------- */
+/* Pricing and resources cards moved to cream sections — lighten their backgrounds */
+.section--cream .pricing-detail-card,
+.section--cream .resource-doc-card {
+  background: #FFFFFF;
+  border-color: var(--divider);
+}
+.section--cream .pricing-detail-card h4,
+.section--cream .resource-doc-card h4 {
+  color: var(--navy);
+}
+.section--cream .annual-card {
+  background: var(--gold-dim);
+  border-color: var(--border-gold);
+}
+.section--cream .accordion-item {
+  border-color: var(--divider);
+}
+.section--cream .tab-nav {
+  border-bottom-color: var(--divider);
+}
+.section--cream .comparison-col--them,
+.section--cream .comparison-col--us {
+  background: #FFFFFF;
+  border-color: var(--divider);
+}
+.section--cream .comparison-col--us {
+  border-color: var(--gold);
+}
 
 .section-label {
   font-family: var(--font-mono);
@@ -585,7 +640,7 @@ button { cursor: pointer; font-family: inherit; }
 .tab-btn:hover::after {
   left: 0;
   right: 0;
-  background: rgba(139, 125, 85, 0.4);
+  background: rgba(200, 168, 75, 0.4);
 }
 .tab-btn.active { color: var(--gold); }
 .tab-btn.active::after {
@@ -1365,7 +1420,13 @@ button { cursor: pointer; font-family: inherit; }
 /* -------------------------------------------- */
 .site-footer {
   padding: 64px 0 48px;
-  border-top: 1px solid var(--border-subtle);
+  background: var(--navy);
+  color: var(--text-on-dark);
+  --text-primary: var(--text-on-dark);
+  --text-muted: var(--text-muted-on-dark);
+  --text-faint: var(--text-faint-on-dark);
+  --border-subtle: rgba(250, 246, 238, 0.12);
+  border-top: 1px solid rgba(250, 246, 238, 0.12);
 }
 
 .footer-inner {
@@ -1802,7 +1863,7 @@ button { cursor: pointer; font-family: inherit; }
     margin: -0.5px;
   }
   [data-tabs="product"] .tab-btn.active {
-    background: rgba(139, 125, 85, 0.08);
+    background: rgba(200, 168, 75, 0.08);
     border-color: var(--gold);
   }
   [data-tabs="product"] .tab-btn::after {
